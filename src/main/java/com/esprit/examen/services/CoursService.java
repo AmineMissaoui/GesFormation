@@ -1,6 +1,7 @@
 package com.esprit.examen.services;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import org.apache.logging.log4j.LogManager; 
@@ -22,17 +23,11 @@ public class CoursService implements ICoursService {
 	private static final Logger l = LogManager.getLogger(CoursService.class);
 	
 
-	public void testRetrieveUser() { 
-	l.info("test : "); 
-	} 
-
-
 	@Autowired
 	CoursRepository coursRepository;
 	@Override
 	public Long addCours(Cours cours) {
 		try {
-			
 			cours.setTypeCours(null);
 			coursRepository.save(cours);
 			}catch(Exception  e) {
@@ -68,6 +63,12 @@ public class CoursService implements ICoursService {
 		
 		List<Cours> cours =   coursRepository.findAll();
 		return cours;
+	}
+	
+	@Override
+	public Optional<Cours> retrieveCour(Long coursId) {
+		Optional<Cours> cour = coursRepository.findById(coursId);
+		return cour;
 	}
 	
 	@Override

@@ -1,7 +1,7 @@
 package com.esprit.examen.controllers;
 
 import java.util.List;
-import java.util.Set;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,10 +16,25 @@ import org.springframework.web.bind.annotation.RestController;
 import com.esprit.examen.entities.Cours;
 import com.esprit.examen.services.ICoursService;
 
+
+
 @RestController
 public class CoursRestController {
 @Autowired
 ICoursService coursService;
+
+@GetMapping("/{coursId}")
+@ResponseBody
+public Optional<Cours> getbyId(Long coursId) {
+	return coursService.retrieveCour(coursId);
+}
+
+@GetMapping("/")
+@ResponseBody
+public List<Cours> getAll() {
+	List<Cours> cours = coursService.getCours();
+	return cours;
+}
 
 @PostMapping("/ajouterCours")
 @ResponseBody
@@ -28,11 +43,10 @@ public Cours ajouterCours(@RequestBody Cours cours) {
 	return cours;
 }
 
-@PutMapping("/modifierCours")
+@PutMapping("/modifierCours/{coursId}")
 @ResponseBody
-public Cours modifierCours(@RequestBody Cours cours) {
-	coursService.addCours(cours);
-	return cours;
+public void modifierCours(@RequestBody Cours cours) {
+	coursService.modifierCours(cours);
 }
 
 @DeleteMapping("/supprimerCours/{coursId}")

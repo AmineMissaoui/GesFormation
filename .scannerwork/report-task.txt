@@ -1,0 +1,6 @@
+projectKey=spring-boot-starter-parent
+serverUrl=http://localhost:9000
+serverVersion=6.7.7.38951
+dashboardUrl=http://localhost:9000/dashboard/index/spring-boot-starter-parent
+ceTaskId=AX9raBb6Q6HgsTApuE6A
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AX9raBb6Q6HgsTApuE6A
