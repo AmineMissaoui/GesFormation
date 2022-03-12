@@ -1,14 +1,7 @@
-FROM openjdk:12-jdk-alpine
-
-ENV APP_HOME=/usr/app/
-
-WORKDIR $APP_HOME
-
-COPY build/libs/*.jar app.jar
+FROM openjdk:8-jdk-alpine
 
 EXPOSE 8083
 
-CMD [“java”, “-jar”, “app.jar”]
+ADD target/*.jar Ges-F.jar
 
-
-
+ENTRYPOINT ["java","-jar","Ges-F.jar"]
