@@ -1,6 +1,6 @@
 FROM openjdk:8-jdk-alpine
 
-EXPOSE 8083
+EXPOSE 8086
 
 ADD target/*.jar Ges-F.jar
 
