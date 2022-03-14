@@ -61,8 +61,7 @@ public class CoursService implements ICoursService {
 	@Override
 	public List<Cours> getCours() {
 		
-		List<Cours> cours =   coursRepository.findAll();
-		return cours;
+		return coursRepository.findAll();
 	}
 	
 	@Override

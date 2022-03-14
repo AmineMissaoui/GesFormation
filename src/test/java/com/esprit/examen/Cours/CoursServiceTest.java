@@ -23,13 +23,42 @@ public class CoursServiceTest {
 	private static final Logger l =
 	LogManager.getLogger(CoursServiceTest.class);
 	
+	private final Cours cour = new Cours(null, "description", TypeCours.Informatique, "intitle");
+	
+    @Test
+    public void testGetCours() {
+    	//List<Cours> cours1 =  cs.getCours();
+    	//int firstLength1 = cours1.size();
+    	//cs.addCours(cour);
+    	//List<Cours> cours2 =  cs.getCours();
+    	//int firstLength2 = cours2.size();
+    	//Assert.assertEquals(firstLength2,firstLength1 + 1);
+    	//Long id = cour.getId();
+    	//Assert.assertNotNull(id);
+    	//cs.supprimerCours(id);
+    }
+    
+    @Test
+    @Transactional
+    public void testSupprimerCours() {
+      //  cs.addCours(cour);
+      //  Long id = cour.getId();
+       // Assert.assertNotNull(id);
+       // List<Cours> cours1 =  cs.getCours();
+       // int firstLength1 = cours1.size();
+       // cs.supprimerCours(id);
+        //List<Cours> cours2 =  cs.getCours();
+        //int firstLength2 = cours2.size();
+        //Assert.assertEquals(firstLength2,firstLength1 - 1);
+
+    }
 
 	
-	@Test
-	public void testRetrieveCour() {
+	//@Test
+	//public void testRetrieveCour() {
 	//Cours cour = new Cours((long)5,"description", null,"test");
 	//Optional<Cours> cours = cs.retrieveCour((long)5);
 	//assertEquals(cours,cours);
 	//l.info("retrieveUser : "+ cours);	
-}
+//}
 }
